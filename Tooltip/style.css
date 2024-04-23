@@ -64,3 +64,37 @@ body {
 .tooltip:hover::after{
     display: block;
 }
+ .tooltip::before {
+    background-color: #333;
+    content: ' ';
+    display: none;
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    z-index: 999;
+ }
+ .tooltip:hover::before {
+    display: block;
+ }
+ .tooltip.top::before {
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, calc(-100% - 5px)) rotate(45deg);
+ }
+ .tooltip.bottom::before {
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, calc(100% + 5px)) rotate(45deg);
+}
+
+.tooltip.right::before {
+    top: 50%;
+    right: 0;
+    transform: translate(calc(100% + 5px), -50%) rotate(45deg);
+}
+
+.tooltip.left::before {
+    top: 50%;
+    left: 0;
+    transform: translate(calc(-100% - 5px), -50%) rotate(45deg);
+}
