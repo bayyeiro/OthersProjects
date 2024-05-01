@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" type="image/x-icon" href="img/bomb.png" />
+    <title>BOMBERMAN</title>
+    <!-- CSS de Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+    <!-- JS de Bootstrap et jQuery (nécessaire pour les modals) -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div class="containt">
+        <div class="play-in"></div>
+    </div>
+    <div class="bord">
+    
+         <!-- Game elements here -->
+        <div id="counter-score">Score: <span id="score">0</span></div>
+        <div id="counter-life">Life: <span id="life">4</span></div>
+        <button class="buttonPause">
+            <svg class="svg-icon" fill="none" height="24" viewBox="0 0 24 24" width="24"
+                xmlns="http://www.w3.org/2000/svg">
+                <g stroke="#ff2849" stroke-linecap="round" stroke-width="2">
+                    <rect height="14" rx="1.5" width="3" x="15" y="5"></rect>
+                    <rect height="14" rx="1.5" width="3" x="6" y="5"></rect>
+                </g>
+            </svg>
+            <span class="label">Pause</span>
+        </button>
+        <button class="buttonRest">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2v20M12 22c-6.627 0-12-5.373-12-12s5.373-12 12-12 12 5.373 12 12-5.373 12-12 12z"></path>
+                <path d="M12 12l-4-4 4-4m-4 4l4 4-4 4"></path>
+            </svg>
+            <span class="labelRestart">Restart</span>
+        </button>
+        <button class="buttonExit1">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 6L6 18M6 6l12 12"></path>
+            </svg>
+            <span class="label">Exit</span>
+        </button>
+        
+
+        <div id="counter-time">Time: <span id="time">180</span></div>
+
+
+    </div>
+
+    <script type="module" src="script.js"></script>
+</body>
+</html>

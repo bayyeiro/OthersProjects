@@ -1,0 +1,194 @@
+body {
+    background-image: url('img/back.webp');
+    background-size: cover;
+    opacity: 0.91;
+    overflow: hidden;
+    margin: 0;
+}
+.containt {
+    width: 1050px;
+    margin: 95px 150px 150px 95px;
+    border: 5px solid rgb(105, 105, 105);
+    position: block;
+}
+.list {
+    background-size: cover;
+}
+.wall {
+    background-image: url('img/indeswall.png');
+    width: 50px;
+    height: 50px;
+}
+.brick {
+    background-image: url('img/deswall.png');
+    width: 50px;
+    height: 50px;
+}
+.grass {
+    background-image: url('img/grass.png');
+    width: 50px;
+    height: 50px;
+}
+.bord {
+        width: 600px;
+        height: 200px;
+        background-color: rgb(77, 134, 75);
+        position: absolute;
+        top: 290.5px;
+        left: 1195.5px;
+        border: 5px solid rgb(105, 105, 105);
+        animation: pulse 1s infinite alternate;
+
+}
+.play-in {
+    /* width: 1000px; */
+    display: grid;
+    grid-template-columns: repeat(21, 50px);
+    grid-template-rows: repeat(13, 50px);
+    max-width: 100%;
+    overflow: hidden;
+}
+/* img {
+    width: 50px;
+    height: 50px;
+    background-size: cover;
+    position: relative;
+    left:50px;
+    top: 50px;
+} */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+.actor {
+    background-size: cover;
+    position: relative;
+    background-image: url('img/man.png');
+    width: 50px;
+    height: 50px;
+    z-index: 2;
+}
+.ghost {
+    background-size: cover;
+    position: relative;
+    /* background-image: url('img/ghost.png'); */
+    width: 50px;
+    height: 50px;
+    z-index: 1;
+}
+.bomb {
+    background-image: url('img/dynamites.png');
+    background-size: cover;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+}
+
+#counter-score,
+#counter-time,
+#counter-life,
+.buttonPause,
+.buttonRest,.buttonExit1 {
+    position: absolute;
+    color: #fff;
+    font-size: 24px;
+    font-weight: bold;
+}
+#counter-score {
+    top: 10px;
+    right: 20px;
+    animation: pulse 1s infinite alternate;
+    /* Animation de pulsation */
+}
+
+#counter-time {
+    bottom: 10px;
+    left: 20px;
+    animation: pulse 1s infinite alternate;
+
+    /* animation: countdown 1s linear infinite; */
+    /* Animation de décompte */
+}
+#counter-life {
+    top: 10px;
+    left: 20px;
+    animation: pulse 1s infinite alternate;
+
+    /* animation: countdown 1s linear infinite; */
+    /* Animation de décompte */
+}
+#score, #time, #life {
+    color: #fff;
+    /* Couleur or */
+}
+@keyframes pulse {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.1);
+    }
+}
+
+@keyframes countdown {
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(1.2);
+    }
+}
+.buttonPause,
+.buttonRest,.buttonExit1 {
+    width: 150px;
+    height: 60px;
+    padding: 18px 22px 18px 20px;
+    gap: 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 16px;
+    border: none;
+    cursor: pointer;
+}
+.buttonPause {
+    background: #ff284818;
+    top: 30%;
+    left: 5%;
+}
+
+.buttonRest {
+    top: 30%;
+    left: 35%;
+    background: #41ff2839;
+}
+
+.buttonExit1 {
+    background: #ff284839;
+   
+    top: 30%;
+    left: 65%;
+}
+.label {
+    font-family: sans-serif;
+    height: 23px;
+    font-size: 19px;
+    line-height: 24px;
+    color: #FF2849;
+}
+.buttonPause,
+.buttonExit1:hover {
+    background: #ff284839;
+}
+
+.buttonPause,
+.buttonExit1,
+.buttonRest,.buttonE:hover .svg-icon {
+    animation: pulse 1s infinite alternate;
+}
