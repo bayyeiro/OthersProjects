@@ -23,7 +23,7 @@
          <!-- Game elements here -->
         <div id="counter-score">Score: <span id="score">0</span></div>
         <div id="counter-life">Life: <span id="life">4</span></div>
-        <button class="buttonPause">
+        <button class="buttonPause" id="pause">
             <svg class="svg-icon" fill="none" height="24" viewBox="0 0 24 24" width="24"
                 xmlns="http://www.w3.org/2000/svg">
                 <g stroke="#ff2849" stroke-linecap="round" stroke-width="2">
@@ -33,7 +33,7 @@
             </svg>
             <span class="label">Pause</span>
         </button>
-        <button class="buttonRest">
+        <button class="buttonRest" onclick="window.location.reload()">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M12 2v20M12 22c-6.627 0-12-5.373-12-12s5.373-12 12-12 12 5.373 12 12-5.373 12-12 12z"></path>
@@ -41,7 +41,7 @@
             </svg>
             <span class="labelRestart">Restart</span>
         </button>
-        <button class="buttonExit1">
+        <button class="buttonExit1" id="resume">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M18 6L6 18M6 6l12 12"></path>
             </svg>
