@@ -30,32 +30,23 @@ body {
     height: 50px;
 }
 .bord {
-        width: 600px;
-        height: 200px;
-        background-color: rgb(77, 134, 75);
-        position: absolute;
-        top: 290.5px;
-        left: 1195.5px;
-        border: 5px solid rgb(105, 105, 105);
-        animation: pulse 1s infinite alternate;
+    width: 600px;
+    height: 200px;
+    background-color: rgb(38, 160, 33);
+    position: absolute;
+    top: 290.5px;
+    left: 1195.5px;
+    border: 5px solid rgb(105, 105, 105);
 
 }
 .play-in {
-    /* width: 1000px; */
+    background: black;
     display: grid;
     grid-template-columns: repeat(21, 50px);
     grid-template-rows: repeat(13, 50px);
     max-width: 100%;
     overflow: hidden;
 }
-/* img {
-    width: 50px;
-    height: 50px;
-    background-size: cover;
-    position: relative;
-    left:50px;
-    top: 50px;
-} */
 @keyframes fadeIn {
     0% {
         opacity: 0;
@@ -75,24 +66,25 @@ body {
 .ghost {
     background-size: cover;
     position: relative;
-    /* background-image: url('img/ghost.png'); */
     width: 50px;
     height: 50px;
     z-index: 1;
 }
 .bomb {
-    background-image: url('img/dynamites.png');
+    background-image: url('img/nod.png');
     background-size: cover;
     width: 50px;
     height: 50px;
     position: absolute;
 }
-
 #counter-score,
 #counter-time,
+#counter-time1,
 #counter-life,
-.buttonPause,
-.buttonRest,.buttonExit1 {
+#counter-life1,
+.buttonOnly,
+.buttonRest
+{
     position: absolute;
     color: #fff;
     font-size: 24px;
@@ -102,50 +94,32 @@ body {
     top: 10px;
     right: 20px;
     animation: pulse 1s infinite alternate;
-    /* Animation de pulsation */
 }
-
 #counter-time {
     bottom: 10px;
     left: 20px;
     animation: pulse 1s infinite alternate;
 
-    /* animation: countdown 1s linear infinite; */
-    /* Animation de décompte */
 }
-#counter-life {
+#counter-time1 {
+    top: 10px;    /* text-decoration: none; */
+
+    left: 45%;
+    animation: pulse 1s infinite alternate;
+}
+#counter-life,#counter-life1 {
     top: 10px;
     left: 20px;
-    animation: pulse 1s infinite alternate;
-
-    /* animation: countdown 1s linear infinite; */
-    /* Animation de décompte */
 }
-#score, #time, #life {
+#score,
+#time,
+#life {
     color: #fff;
-    /* Couleur or */
-}
-@keyframes pulse {
-    from {
-        transform: scale(1);
-    }
-
-    to {
-        transform: scale(1.1);
-    }
 }
 
-@keyframes countdown {
-    0% {
-        transform: scale(1);
-    }
-
-    100% {
-        transform: scale(1.2);
-    }
-}
-.buttonPause,
-.buttonRest,.buttonExit1 {
+.buttonOnly,
+.buttonRest
+{
     width: 150px;
     height: 60px;
     padding: 18px 22px 18px 20px;
@@ -156,39 +130,123 @@ body {
     border-radius: 16px;
     border: none;
     cursor: pointer;
-}
-.buttonPause {
-    background: #ff284818;
-    top: 30%;
-    left: 5%;
-}
+    font-size: 19px;
 
+}
+.buttonOnly{
+    background: #d60726d2;
+    top: 30%;
+    left: 20%;
+}
 .buttonRest {
     top: 30%;
-    left: 35%;
+    left: 55%;
     background: #41ff2839;
-}
-
-.buttonExit1 {
-    background: #ff284839;
-   
-    top: 30%;
-    left: 65%;
 }
 .label {
     font-family: sans-serif;
     height: 23px;
     font-size: 19px;
     line-height: 24px;
-    color: #FF2849;
+    color: #f8edef;
 }
-.buttonPause,
-.buttonExit1:hover {
-    background: #ff284839;
-}
-
-.buttonPause,
-.buttonExit1,
-.buttonRest,.buttonE:hover .svg-icon {
+.buttonOnly,
+.buttonRest{
     animation: pulse 1s infinite alternate;
 }
+#resume {
+    display: none;
+}
+
+.explosion {
+    z-index: 3;
+}
+.explosion-particle {
+    position: absolute;
+    width: 34px;
+    height: 34px;
+    background-image: url('img/fire.jpeg');
+    z-index: 3;
+}
+.spark {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background-color: #f1fb86;
+    opacity: 1;
+    z-index: 3;
+}
+
+  
+  .modal {
+    display: none; /* Cacher le modal par défaut */
+    position: absolute;
+    z-index: 1;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 100%;
+    height: 100%;
+    overflow: hidden; /* Assurez-vous que le contenu peut déborder */
+  }
+  
+  .modal-content {
+    padding: 20px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .modal-header {
+    text-align: center;
+  }
+  
+  .modal-header h2 {
+    margin: 0;
+    color: black;
+    font-size: 100px;
+    margin-bottom: 50px;
+    position: relative;
+    overflow: hidden;
+
+  }
+  
+  .modal-body {
+    text-align: center;
+  }
+  
+  .modal-body h1 {
+    margin: 0;
+    color: black;
+    font-size: 60px;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .modal-footer {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .modal-footer button {
+    background-color: white; /* Vert */
+    border-radius: 20px;
+    color: black;
+    padding: 15px 32px;
+    text-align: center;
+    display: inline-block;
+    font-size: 26px;
+    margin: 4px 2px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  
+  .modal-footer {
+    display: flex;
+    justify-content: flex-end;
+  }
